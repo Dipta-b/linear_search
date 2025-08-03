@@ -1,30 +1,35 @@
-// Dipta Banik CSE2302029067
-
 #include <stdio.h>
 int main()
 {
+    int i, n, a[100], x, flags = 0;
 
-    int arr[10] = {2, 5, 10, 35, 44, 49, 53, 57, 86, 96}, i, x, size = 10;
-    printf("Array Elements Are :");
+    printf("Enter your array size : ");
+    scanf("%d", &n);
 
-    for (i = 0; i < size; i++)
+    printf("Taking array elements\n");
+    for (i = 0; i < n; i++)
     {
-        printf("%d ", arr[i]);
+        scanf("%d", &a[i]);
     }
-
-    printf("\nWhich Array Element You Want To Search? ");
+    printf("\nArray elements are : ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\nEnter searching elements : ");
     scanf("%d", &x);
 
-    for (i = 0; i < size; i++)
+    for (i = 0; i < n; i++)
     {
-        if (arr[i] == x)
+        if (x == a[i])
         {
-            printf("Item Found At position : %d", i + 1);
-            return 0;
+            printf("The location is in in %d", i + 1);
+            flags = 1;
         }
     }
-
-    printf("Item Not Found!");
-
+    if (flags == 0)
+    {
+        printf("The item not found");
+    }
     return 0;
 }
